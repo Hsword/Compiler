@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1447159001 source:/home/hsword/桌面/代码堆/编译原理/表达式语法分析-递归下降子程序/main.cpp
+	<iostream>
+	<string>
+	<cstdio>
+	<vector>
+	<cmath>
+

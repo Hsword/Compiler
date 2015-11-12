@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1447132572 source:/home/hsword/桌面/代码堆/编译原理/词法分析器重写/词法分析器重写/main.cpp
+	<iostream>
+	<string>
+	<cstdio>
+	<vector>
+	<cmath>
+

@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1445950500 source:/home/hsword/桌面/代码堆/编译原理/词法分析器/main.cpp
+	<string>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<cmath>
+	<queue>
+	<vector>
+	<stack>
+	<set>
+	<map>
+	<algorithm>
+	<iostream>
+

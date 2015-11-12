@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1447155707 source:/home/hsword/桌面/代码堆/编译原理/表达式语法分析-LL1/main.cpp
+	<iostream>
+	<string>
+	<cstdio>
+	<vector>
+	<cmath>
+	<stack>
+
