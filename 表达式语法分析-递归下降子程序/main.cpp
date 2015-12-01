@@ -192,24 +192,28 @@ void expr1()
 {
     if(cur_tag=='+'||cur_tag=='-')
     {
+        char w1=cur_tag;
         cur_token++;
         cur_tag=Token_list[cur_token]->get_tag();
         term();
         if(error) return ;
         expr1();
         if(error) return ;
+        printf("%c",w1);
     }
 }
 void term1()
 {
     if(cur_tag=='*'||cur_tag=='/')
     {
+        char w1=cur_tag;
         cur_token++;
         cur_tag=Token_list[cur_token]->get_tag();
         factor();
         if(error) return ;
         term1();
         if(error) return ;
+        printf("%c",w1);
     }
 }
 void factor()
@@ -232,6 +236,15 @@ void factor()
             error=true;
             return ;
         }
+    }
+    else
+    {
+        if(cur_tag==ID)
+            cout<<Token_list[cur_token]->get_lexeme_str();
+        else if(cur_tag==NUM)
+            cout<<Token_list[cur_token]->get_numvalue();
+        else
+            printf("%.2f",Token_list[cur_token]->get_realvalue());
     }
     cur_token++;
     cur_tag=Token_list[cur_token]->get_tag();
@@ -531,6 +544,7 @@ int main()
         cur_token=0;
         cur_tag=Token_list[cur_token]->get_tag();
         expr();
+        printf("\n");
         if(Token_list[cur_token]->get_tag()!=SHARP)
             error=true;
         if(error==false)
