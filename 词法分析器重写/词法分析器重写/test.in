@@ -2,7 +2,8 @@ int main()
 {
     int a=1,d=2,c;
     char p[10]="lol";
-    if(a<=d)
+    c=1;
+    if(a<=d&&d<c)
     {
         c=a;
         a=d;

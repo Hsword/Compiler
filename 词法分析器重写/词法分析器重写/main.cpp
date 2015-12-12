@@ -6,7 +6,7 @@
 using namespace std;
 enum Tag
 {
-    NUM=256,REAL,ID,IF,ELSE,FOR,WHILE,DO,BREAK,CONTINUE,MINUS,AND,OR,EQ,NE,GE,LE,STR,TYPE,KEY
+    NUM=256,REAL,ID,IF,ELSE,FOR,WHILE,DO,BREAK,CONTINUE,AND,OR,EQ,NE,GE,LE,STR,TYPE,KEY
 };
 const int k_w_len=7;
 const int t_w_len=5;
@@ -125,7 +125,7 @@ bool isdigit(char c)
         return true;
     else return false;
 }
-string symbols=",;+-*/(){}[]";
+string symbols=",;+-*/(){}[]^?:!~";
 bool issymbol(char c)
 {
     for(int i=0;i<symbols.length();i++)
@@ -446,6 +446,36 @@ int main()
             Token_list.push_back(new Token(c));
             forword++;
             lexemeBegin++;
+        }
+        else if(c=='&')
+        {
+            if((forword+1>=buffer_size)||(buffer[forword+1]!='&'))
+            {
+                Token_list.push_back(new Token(c));
+                forword++;
+                lexemeBegin++;
+            }
+            else
+            {
+                Token_list.push_back(new Token(AND));
+                forword+=2;
+                lexemeBegin+=2;
+            }
+        }
+        else if(c=='|')
+        {
+            if((forword+1>=buffer_size)||(buffer[forword+1]!='|'))
+            {
+                Token_list.push_back(new Token(c));
+                forword++;
+                lexemeBegin++;
+            }
+            else
+            {
+                Token_list.push_back(new Token(OR));
+                forword+=2;
+                lexemeBegin+=2;
+            }
         }
     }
     if(error)
